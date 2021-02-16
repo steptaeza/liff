@@ -98,7 +98,9 @@
     }
 
     async function sendMsg() {
+      alert('open');
       if (liff.getContext().type !== "none") {
+        alert('open in');
         await liff.sendMessages([
           {
             "type": "sticker",
