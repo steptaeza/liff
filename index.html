@@ -58,6 +58,7 @@
     }
 
     function closed() {
+      liff.closeWindow();
     }
 
     async function scanCode() {
@@ -83,16 +84,15 @@
     }
 
     async function sendMsg() {
-      alert(liff.getContext().type);
-      if(liff.getContext().type !== "none") {
+      if (liff.getContext().type !== "none") {
         await liff.sendMessages([
           {
-            "type": 'sticker',
-            "sticker": 1,
-            "package": 1
+            "type": "sticker",
+            "stickerId": 1,
+            "packageId": 1
           }
-        ]);
-        alert('Message send');
+        ])
+        alert("Message sent")
       }
     }
 
